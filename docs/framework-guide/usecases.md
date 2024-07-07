@@ -16,6 +16,9 @@ The framework is very data centric. This page illustrates usecases and how the c
     - map = current map
     - coordinates = obj_tree_1 location
     - amount = 3 (or similar)
+  - Trigger a signal placeable_added
+    - The scene then needs to listen to this signal and spawn items
+    - Instead of each scene implementing this, there is a global PlaceableListener that can interact with any active scene
 
 ## Picking up an item from the ground
 - Get object coordinates, item_id and amount
