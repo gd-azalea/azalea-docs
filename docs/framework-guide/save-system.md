@@ -10,3 +10,5 @@ As the game progresses, the current.db gets updated. This means that if you stop
 When you make a save game, you're calling the backup function of the current.db into a new file (https://github.com/2shady4u/godot-sqlite?tab=readme-ov-file#functions). This allows you to copy the database file while it is in use (because open database files are locked).
 
 When loading a game it's doing a restore of the file into current.db, overwriting the current.db file.
+
+Since there is a current.db that would always be made, it would make for annoying testing. A forced reset each startup is triggered via AbstractRepository (DirAccess.open(AbstractRepository.DB_PATH).remove("current.db") #this resets the game each time)
