@@ -9,3 +9,4 @@ A global bibliography to other relevant documentation, used frameworks or assets
 ## Plugins used
 * [GUT](https://godotengine.org/asset-library/asset/54) - Unit testing
 * [Godot-SQLite](https://godotengine.org/asset-library/asset/1686) - Connects to SQLite, which we use to load and persist data
+* [Phantom Camera](https://phantom-camera.dev/introduction/scene-requirements) - Flexible camera system
