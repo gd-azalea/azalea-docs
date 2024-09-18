@@ -29,7 +29,7 @@ SceneLoader.load_w_memory_flag(get_tree(), "MyLevelName", true)
 ```
 
 ## Example
-You would only need to do this one way. For example: let's say you have a city and a building. The city is a big map to load, the building a small one. You would load into the city originally like this:
+You would only need to do this one way. Let's say you have a city and a building. The city is a big map to load, the building a small one. You would load into the city originally like this:
 ``` gdscript
 SceneLoader.load(get_tree(), "City")
 ```
@@ -43,4 +43,7 @@ SceneLoader.load(get_tree(), "City")
 ```
 Calling the above would remove the building from memory. Since the city never got unloaded, there is practically no loading. The downside to this is that more memory is used, so it is not advised to do this with two back to back heavy levels.
 
-ref: [scene_transition.gd - prototype](https://github.com/kevindeyne/azalea-prototype/blob/main/player/scene_transition.gd) and [SceneLoader.gd - new impl](https://github.com/gd-azalea/azalea/blob/main/scripts/framework/SceneLoader.gd)
+## Code references
+[SceneLoader.gd - new impl](https://github.com/gd-azalea/azalea/blob/main/scripts/framework/SceneLoader.gd)
+[scene_transition.gd - prototype](https://github.com/kevindeyne/azalea-prototype/blob/main/player/scene_transition.gd)
+
