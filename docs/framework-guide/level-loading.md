@@ -45,5 +45,6 @@ Calling the above would remove the building from memory. Since the city never go
 
 ## Code references
 [SceneLoader.gd - new impl](https://github.com/gd-azalea/azalea/blob/main/scripts/framework/SceneLoader.gd)
+
 [scene_transition.gd - prototype](https://github.com/kevindeyne/azalea-prototype/blob/main/player/scene_transition.gd)
 
