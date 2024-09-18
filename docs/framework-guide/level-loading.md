@@ -1,17 +1,26 @@
 # Level loading
 
-Handled in <https://github.com/kevindeyne/azalea-prototype/blob/main/player/scene_transition.gd>
+Gameplay is consistently run from [Root.tscn](https://github.com/gd-azalea/azalea/blob/main/scenes/framework/Root.tscn). This default scene initializes essential components such as the GUI, Player, Weather, and Day/Night Cycle. Importantly, it contains a `🌏 Level` node, where the active level is loaded as a child node.
 
-All levels should be added to a /levels folder and end with `_level` we do this to allow quick and easy lookups by name.
+This setup allows for persistent audio and GUI elements across different scenes, minimizing noticeable transitions and hard cuts during level loading.
 
-To maintain full control, we need a LevelManager class. Our game will always have a default scene that is loaded. This default scene sets up the GUI, Player, Weather, DayNightCycle, etc.
+All levels should be stored in `res://scenes/levels/` for quick and easy name-based lookups.
 
-Loading another scene essentially means:
+## Scene Loading Process
+Loading a new scene involves the following steps:
 
-- Fading to black
-- Loading the scene file
-- Adding it as another node
-- Getting rid of the ‘wrong’ node
-- Spawning the player in the correct position
+- Fading to black.
+- Loading the scene file.
+- Adding the new scene as a child node.
+- Removing the previous scene node.
+- Spawning the player in the correct position.
 
-There should also be the option to keep a previous area in memory. This for ‘quick in-n-outs’, so for example the interior of a building. It’s a different scene, you load the small scene, but keep the big exterior scene in memory. That way, when you go back outside, it’s pretty much instant because it was never unloaded.
+The primary class responsible for this process is SceneLoader. You can load a level with the following call:
+
+``` gdscript
+SceneLoader.load(get_tree(), "MyLevelName")
+```
+
+Additionally, you have the option to keep the previous level in memory by using a flag. This is useful for scenarios like transitioning between the interior and exterior of a building. By retaining the larger exterior scene in memory, returning outside becomes nearly instantaneous since it was never fully unloaded.
+
+ref: [scene_transition.gd - prototype](https://github.com/kevindeyne/azalea-prototype/blob/main/player/scene_transition.gd) and [SceneLoader.gd - new impl](https://github.com/gd-azalea/azalea/blob/main/scripts/framework/SceneLoader.gd)
