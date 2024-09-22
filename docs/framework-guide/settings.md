@@ -9,3 +9,7 @@ The _ready() of OptionsMenu loads in the existing values in the settings. When y
 If no values exist, a default setting is applied. This is defined in SettingsRepository's default_settings() function.
 
 In case you are in the editor, the default settings will be the project settings display/window/size/viewport_width/height in Windowed mode. Outside of the editor, it will default to Fullscreen mode with your screen's resolution set.
+
+Things of note:
+- Fullscreen is WINDOW_MODE_EXCLUSIVE_FULLSCREEN whereas borderless is WINDOW_MODE_FULLSCREEN (on windows)
+- You set resolution through get_viewport().content_scale_size = Vector2(w,h)
