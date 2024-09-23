@@ -9,3 +9,5 @@ As a user you can choose to 'host' a lobby. Once you do so, you can show up in t
 When asking to join a handshake p2p message is sent. With the handshake comes the request to the host to accept a user joining (?). If they choose to agree, a p2p message will be send back telling you of the succesful join.
 
 With the join success message a player gets spawned. The player has a multiplayerSynchronizer which somehow sends p2p data. https://www.youtube.com/watch?v=e0JLO_5UgQo
+
+https://github.com/expressobits/steam-multiplayer-peer ?
