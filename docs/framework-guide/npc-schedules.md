@@ -11,3 +11,11 @@ If the area is loaded in between two schedules, a best guess to the location is 
 
 See I:\Unity\FarmGame\FarmGame\Assets\Scripts\NPC
 
+Looks like in Unity we did this with a NavMeshAgent. It would be appropriate to use something like https://docs.godotengine.org/en/stable/tutorials/navigation/navigation_introduction_2d.html here too. The Unity code does not spawn NPCs, we should still have a global script do so per timeframe (perhaps this can link to WorldTime.(signal)update_time).
+
+I suggest we run this per map. We'd need to:
+- Find a way to figure out who is supposed to be on map right now -> spawns in relevant location
+- Where is everybody going next and at what time?
+
+Additionally:
+- There should be a data test to verify a schedule fits and doesn't 'end'
