@@ -4,5 +4,5 @@ To ensure that the right elements come out on top, every GUI element needs to be
 
 Here is an overview of the layers used:
 
-- Loading blackout - 120
-- GUI (Time, Date) - 50
+- Loading blackout - res://scenes/menus/Loading.tscn - 120
+- GUI (Time, Date) - res://scenes/gui/GUI.tscn - 50
