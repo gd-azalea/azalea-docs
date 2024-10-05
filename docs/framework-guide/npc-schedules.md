@@ -19,3 +19,12 @@ I suggest we run this per map. We'd need to:
 
 Additionally:
 - There should be a data test to verify a schedule fits and doesn't 'end'
+
+##
+
+
+NPC schedules get initially loaded at scene switch. This is done in SceneLoader in the complete_load_with_npc_spawn.
+
+In root there is also an NPCScheduleManager that syncs with the WorldTime changing. Upon change it checks two things:
+- Does any NPC need to spawn in the current map?
+- Do any of the NPCs in the current map need to move or despawn?
