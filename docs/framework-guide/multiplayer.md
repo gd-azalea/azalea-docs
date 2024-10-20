@@ -29,5 +29,8 @@ Unique to player (does not get synced):
 
 Everything aside from player position/orientation/action is hash protected. Since this is synced through unreliable communication, we cannot be sure if we 'miss' a placeable or destructable, for example. Instead of sending the data of all placeables/destructables in a scene each time, we instead send a hash of all items. As long as the hash is the same, we know we're in sync. If the hash is different, we need a reliable call made to ensure we're back in sync.
 
-Two players can be in different scenes/areas. If the player is in the same area and 'close enough', they will follow along with conversations and cutscenes.
+Two players can be in different scenes/areas. If the player is in the same area and 'close enough', they will follow along with cutscenes.
 This means we need info on where to 'start' a conversation, lock the conversation choices/speed to the owner of the conversation (whomever starts it) and sync it.
+
+After the handshake, the player gets a welcome package. This contains where the other players are at that time, so the new player can spawn into that map. It also contains the details for the game (ie placeables, destructables, weather, time, etc). From the spawn point on, only sync data will be passed along.
+
