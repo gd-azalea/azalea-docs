@@ -34,3 +34,8 @@ This means we need info on where to 'start' a conversation, lock the conversatio
 
 After the handshake, the player gets a welcome package. This contains where the other players are at that time, so the new player can spawn into that map. It also contains the details for the game (ie placeables, destructables, weather, time, etc). From the spawn point on, only sync data will be passed along.
 
+
+Each item has a MultiplayerSync node attached to it. This runs through _process and takes any configured properties and sends them along to the MultiplayerBus.
+The MultiplayerBus collects all events from everyone, and bundles them together in batches. It also does translations (ie 'Player' from host perspective is a lobby member from another perspective). It has an internal timer, and once the timer hits (usually 30/s) it sends an unreliable p2p bundle message across the relay known as "sync".
+
+SteamNetwork will receive messages and send the incoming messages to MultiplayerUtils for translating to world updates.
