@@ -15,3 +15,5 @@ Y sorting should usually handle this, but players and npcs are not in the same s
 - Behind default: 3 
 - Default z-index: 5
 - In front of default : 7
+
+Set this on the parent node of the sprite. IE on player, not on the animatedSprite2d of player.
