@@ -12,8 +12,8 @@ Here is an overview of the layers used:
 Y sorting should usually handle this, but players and npcs are not in the same structure as the level, due to being able to load those around. As such we have some custom code to do exactly the same by dynamic z-index changing. Higher z-index means drawing in front of others.
 
 - Landscape/background: 0
-- Behind default: 3 
-- Default z-index: 5
-- In front of default : 7
+- Behind default: 3
+- Default z-index: 10
+- In front of default : 17
 
 Set this on the parent node of the sprite. IE on player, not on the animatedSprite2d of player.
