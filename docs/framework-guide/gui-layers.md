@@ -5,7 +5,9 @@ To ensure that the right elements come out on top, every GUI element needs to be
 Here is an overview of the layers used:
 
 - Loading blackout - res://scenes/menus/Loading.tscn - 120
+- Menus - 100
 - GUI (Time, Date) - res://scenes/gui/GUI.tscn - 50
+- Dialogue - 40
 
 ## Z-index
 
